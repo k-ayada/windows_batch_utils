@@ -1,0 +1,993 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.dostips.com/DtTipsStringManipulation.php -->
+<HTML lang=en-US><HEAD><TITLE>DOS - String Manipulation</TITLE>
+<META http-equiv=content-type content="text/html; charset=iso-8859-1">
+<META content=TRUE name=MSSmartTagsPreventParsing>
+<META http-equiv=expires content=-1>
+<META http-equiv=pragma content=no-cache>
+<META content=all name=robots>
+<META 
+content="dos,functions,vista,xp,command line,batch,examples,substring,variables,copies,date" 
+name=keywords><LINK media=all href="DOS - String Manipulation_files/_style.css" 
+type=text/css rel=Stylesheet><LINK href="/favicon.ico" rel="shortcut icon"><LINK 
+href="/animated_favicon1.gif" type=image/gif rel=icon>
+<META content="MSHTML 6.00.2900.6058" name=GENERATOR></HEAD>
+<BODY>
+<DIV class=nav><!-- AddThis Button BEGIN -->
+<DIV class="addthis_toolbox addthis_default_style"><A 
+class=addthis_button_facebook></A><A class=addthis_button_email></A><A 
+class=addthis_button_favorites></A><A class=addthis_button_print></A><SPAN 
+class=addthis_separator>|</SPAN> <A class=addthis_button_expanded 
+href="http://www.addthis.com/bookmark.php?v=250&amp;username=cmdtips">More</A> 
+</DIV>
+<SCRIPT src="DOS - String Manipulation_files/addthis_widget.js" 
+type=text/javascript></SCRIPT>
+<!-- AddThis Button END --><BR>
+<DIV class=navi><A href="http://www.dostips.com/"><IMG height=80 alt=DosTips.com 
+src="DOS - String Manipulation_files/TitleDostips.jpg"></A> <BR><SPAN 
+style="FONT-WEIGHT: bold; FONT-SIZE: 9px">for Windows7,VISTA,XP,NT,Server 
+2000,</SPAN> <BR><SPAN style="FONT-WEIGHT: bold; FONT-SIZE: 9px">Server 
+2003,Server 2008</SPAN> <BR><BR><!-- SiteSearch Google -->
+<FORM style="MARGIN: 5px" action=http://www.dostips.com/DtGeneSearch.php 
+method=get target=_top><SPAN style="FONT-SIZE: 11px">Search:</SPAN> <INPUT 
+type=hidden value=cmdtips.com name=domains> <INPUT onclick="this.value=''" 
+maxLength=255 size=12 value=Google name=q> <INPUT type=hidden 
+value=www.dostips.com name=sitesearch> <INPUT 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; VERTICAL-ALIGN: middle; BORDER-LEFT: medium none; WIDTH: 20px; BORDER-BOTTOM: medium none; HEIGHT: 20px" 
+type=image alt=Search src="DOS - String Manipulation_files/search.gif" 
+value=Search name=sa> <INPUT type=hidden value=pub-4331089886589220 name=client> 
+<INPUT type=hidden value=1 name=forid> <INPUT type=hidden value=ISO-8859-1 
+name=ie> <INPUT type=hidden value=0649133363 name=channel> <INPUT type=hidden 
+value=ISO-8859-1 name=oe> <INPUT type=hidden 
+value=GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:11 
+name=cof> <INPUT type=hidden value=en name=hl> 
+</FORM><!-- SiteSearch Google --><BR>
+<UL>
+  <LI class=nsel><A href="http://www.dostips.com/">Home</A>&nbsp; 
+  <UL>
+    <LI class=nsel> </LI></UL>
+  <LI class=nsel><A>Source Script</A>&nbsp; 
+  <UL>
+    <LI class=nsel><A href="http://www.dostips.com/DtCodeBatchFiles.php">Batch 
+    Files</A>&nbsp; 
+    <LI class=nsel><A 
+    href="http://www.dostips.com/DtCodeFunctions.php">Functions</A>&nbsp; 
+    <LI class=nsel><A href="http://www.dostips.com/DtCodeCmdLib.php">Function 
+    Library</A>&nbsp; 
+    <LI class=nsel><A href="http://www.dostips.com/DtCodeSnippets.php">Script 
+    Snippets</A>&nbsp; 
+    <LI class=nsel><A 
+    href="http://www.dostips.com/DtCodeInterfacing.php">Interfacing</A>&nbsp; 
+    <LI class=nsel> </LI></UL>
+  <LI class=nsel><A>Tips and Tricks</A>&nbsp; 
+  <UL>
+    <LI class=nsel><A href="http://www.dostips.com/DtTipsXCopy.php">Copy 
+    Tips</A>&nbsp; 
+    <LI class=nsel><A href="http://www.dostips.com/DtTipsMenu.php">Menu in 
+    Batch</A>&nbsp; 
+    <LI class=ysel><A 
+    href="http://www.dostips.com/DtTipsStringManipulation.php">String 
+    Manipulation</A>&nbsp; 
+    <LI class=nsel><A 
+    href="http://www.dostips.com/DtTipsStringOperations.php">String 
+    Operations</A>&nbsp; 
+    <LI class=nsel><A href="http://www.dostips.com/DtTipsDateTime.php">Date and 
+    Time</A>&nbsp; 
+    <LI class=nsel><A 
+    href="http://www.dostips.com/DtTipsArithmetic.php">Arithmetic</A>&nbsp; 
+    <LI class=nsel><A href="http://www.dostips.com/DtTipsFtpBatchScript.php">FTP 
+    Batch Script</A>&nbsp; 
+    <LI class=nsel><A href="http://www.dostips.com/DosCommandIndex.php">Command 
+    Index</A>&nbsp; 
+    <LI class=nsel> </LI></UL>
+  <LI class=nsel><A>Tutorials</A>&nbsp; 
+  <UL>
+    <LI class=nsel><A href="http://www.dostips.com/DtTutoFirstBatch.php">My 
+    First Batch</A>&nbsp; 
+    <LI class=nsel><A href="http://www.dostips.com/DtTutoFramework.php">Solid 
+    Framwork</A>&nbsp; 
+    <LI class=nsel><A 
+    href="http://www.dostips.com/DtTutoFunctions.php">Functions</A>&nbsp; 
+    <LI class=nsel><A 
+    href="http://www.dostips.com/DtTutoPersistency.php">Persistency</A>&nbsp; 
+    <LI class=nsel> </LI></UL>
+  <LI class=nsel><A 
+  href="http://www.dostips.com/forum/viewforum.php?f=3">Forum</A>&nbsp; 
+  <UL>
+    <LI class=nsel> </LI></UL>
+  <LI class=nsel><A 
+  href="http://www.dostips.com/DtGeneGeneral.php">General</A>&nbsp; 
+  <UL>
+    <LI class=nsel><A href="http://www.dostips.com/DtGeneTermsOfUse.php">Terms 
+    of Use</A>&nbsp; 
+    <LI class=nsel><A 
+    href="http://www.dostips.com/DtGeneEnabler.php">Enablers</A>&nbsp; 
+    <LI class=nsel><A href="http://www.dostips.com/DtGeneAboutUs.php">About 
+    Us</A>&nbsp; 
+    <LI class=nsel><A href="http://www.dostips.com/DtGeneContact.php">Contact 
+    Us</A>&nbsp; 
+    <LI class=nsel> </LI></UL>
+  <LI class=nsel><A>Other</A>&nbsp; 
+  <UL>
+    <LI class=nsel><A 
+    href="http://www.dot5hosting.com/join/index.bml?AffID=570595&amp;LinkName=dot5txt">Get 
+    Web Hosting</A>&nbsp; 
+    <LI class=nsel><A 
+    href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=9018663">
+    <MARQUEE scrollAmount=2 width=120>Want donate a cup of Cafe? . click 
+    .</MARQUEE></A>&nbsp; 
+    <LI class=nsel> </LI></UL></LI></UL></DIV></DIV>
+<H1>DOS - String Manipulation</H1><SPAN class=shortText>Basic string 
+manipulation in batch like you are used to from other programming 
+languages.</SPAN><BR><BR>
+<TABLE class=posts>
+  <TBODY></TBODY></TABLE><BR>
+<TABLE class=menu cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2></TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.AlignRight">Align 
+      Right</A></TD>
+    <TD class=text>Align text to the right i.e. to improve readability of 
+      number columns.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.LeftString">Left 
+      String</A></TD>
+    <TD class=text>Extract characters from the beginning of a string.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.MapLookup">Map 
+      and Lookup</A></TD>
+    <TD class=text>Use Key-Value pair list to lookup and translate 
+  values.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.MidString">Mid 
+      String</A></TD>
+    <TD class=text>Extract a Substring by Position.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.Remove">Remove</A></TD>
+    <TD class=text>Remove a substring using string substitution.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.RemoveBothEnds">Remove 
+      both Ends</A></TD>
+    <TD class=text>Remove the first and the last character of a string.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.RemoveSpaces">Remove 
+      Spaces</A></TD>
+    <TD class=text>Remove all spaces in a string via substitution.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.Replace">Replace</A></TD>
+    <TD class=text>Replace a substring using string substitution.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.RightString">Right 
+      String</A></TD>
+    <TD class=text>Extract characters from the end of a string.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.SplitString">Split 
+      String</A></TD>
+    <TD class=text>Split a String, Extract Substrings by Delimiters.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.StringConcatenation">String 
+      Concatenation</A></TD>
+    <TD class=text>Add one string to another string.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.TrimLeftFOR">Trim 
+      Left</A></TD>
+    <TD class=text>Trim spaces from the beginning of a string via "FOR" 
+      command.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.TrimQuotes">Trim 
+      Quotes</A></TD>
+    <TD class=text>Remove surrounding quotes via FOR command.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.TrimRightSubst">Trim 
+      Right</A></TD>
+    <TD class=text>Trim spaces from the end of a string via 
+substitution.</TD></TR>
+  <TR>
+    <TD class=title><A 
+      href="http://www.dostips.com/DtTipsStringManipulation.php#Snippets.TrimRightFOR">Trim 
+      Right</A></TD>
+    <TD class=text>Trim spaces from the end of a string via "FOR" 
+  command.</TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152731></A><A name=Snippets.AlignRight></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Align Right - Align text to the right i.e. to improve readability of number 
+columns</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>Add leading spaces to a string to make sure the 
+      output lines up. I.e. for variables no longer than 8 characters add 8 
+      spaces at the front and then show only the last 8 characters of the 
+      variable.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR><A 
+            name=5>5.</A><BR><A name=6>6.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;x=3000</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;y=2</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;x=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%x%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;y=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%y%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.X=%x:~-8%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Y=%y:~-8%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>X=    3000
+Y=       2
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152734></A><A name=Snippets.LeftString></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Left String - Extract characters from the beginning of a string</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>Similar to the <B>Left</B> function in VB a 
+      batch script can return a specified number of characters from the left 
+      side of a string by specifying a substring for an expansion given a 
+      position of 0 and a length using :~ while expanding a variable content. 
+      The example shows how to return the first 4 characters of a string.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str=politic</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:~0,4%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>politic
+poli
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152738></A><A name=Snippets.MapLookup></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Map and Lookup - Use Key-Value pair list to lookup and translate values</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>This example shows an approach to map a name of 
+      a month into it`s corresponding two digit number. The key-value pairs are 
+      listed in the map variable separated by semicolon. Key and value itself 
+      are separated by one dash character. Same can be used to tranlate a 
+      day-of-the-week short string into a day-of-the-week long string by 
+      changing the map content only.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR><A 
+            name=5>5.</A><BR><A name=6>6.</A><BR><A name=7>7.</A><BR><A 
+            name=8>8.</A><BR><A name=9>9.</A><BR><A name=10>10.</A><BR><A 
+            name=11>11.</A><BR><A name=12>12.</A><BR><A name=13>13.</A><BR><A 
+            name=14>14.</A><BR><A name=15>15.</A><BR><A name=16>16.</A><BR><A 
+            name=17>17.</A><BR><A name=18>18.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN style="COLOR: #000000"><SPAN 
+            class=c_cmmt>REM&nbsp;----&nbsp;Example&nbsp;1:&nbsp;Translate&nbsp;name&nbsp;of&nbsp;month&nbsp;into&nbsp;two&nbsp;digit&nbsp;number&nbsp;----</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000">SET&nbsp;v=Mai</SPAN><BR><SPAN 
+            style="COLOR: #000000"></SPAN><BR><SPAN 
+            style="COLOR: #000000">SET&nbsp;map=Jan-01;Feb-02;Mar-03;Apr-04;Mai-05;Jun-06;Jul-07;Aug-08;Sep-09;Oct-10;Nov-11;Dec-12</SPAN><BR><SPAN 
+            style="COLOR: #000000">CALL&nbsp;SET&nbsp;v=<SPAN 
+            class=c_pvar>%%m</SPAN>ap:*%v%-=%%</SPAN><BR><SPAN 
+            style="COLOR: #000000">SET&nbsp;v=%v:;=&amp;<SPAN 
+            class=c_cmmt>rem.%</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000"></SPAN><BR><SPAN 
+            style="COLOR: #000000">ECHO.%v%</SPAN><BR><SPAN 
+            style="COLOR: #000000"></SPAN><BR><SPAN 
+            style="COLOR: #000000"></SPAN><BR><SPAN style="COLOR: #000000"><SPAN 
+            class=c_cmmt>REM&nbsp;----&nbsp;Example&nbsp;2:&nbsp;Translate&nbsp;abbreviation&nbsp;into&nbsp;full&nbsp;string&nbsp;----</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000">SET&nbsp;v=sun</SPAN><BR><SPAN 
+            style="COLOR: #000000"></SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;map=mon-Monday;tue-Tuesday;wed-Wednesday;thu-Thursday;fri-Friday;sat-Saturday;sun-Sunday</SPAN><BR><SPAN 
+            style="COLOR: #000000">CALL&nbsp;SET&nbsp;v=<SPAN 
+            class=c_pvar>%%m</SPAN>ap:*%v%-=%%</SPAN><BR><SPAN 
+            style="COLOR: #000000">SET&nbsp;v=%v:;=&amp;<SPAN 
+            class=c_cmmt>rem.%</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000"></SPAN><BR><SPAN 
+            style="COLOR: #000000">&nbsp;&nbsp;ECHO.%v%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>05
+  Sunday
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152733></A><A name=Snippets.MidString></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Mid String - Extract a Substring by Position</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>Similar to the <B>Mid</B> function in VB a batch 
+      script can return a specified number of characters from any position 
+      inside a string by specifying a substring for an expansion given a 
+      position and length using :~ while expanding a variable content. The 
+      example here shows how to extract the parts of a date.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR><A 
+            name=5>5.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">echo.Date&nbsp;&nbsp;&nbsp;:&nbsp;%date%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Weekday:&nbsp;%date:~0,3%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Month&nbsp;&nbsp;:&nbsp;%date:~4,2%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Day&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;%date:~7,2%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Year&nbsp;&nbsp;&nbsp;:&nbsp;%date:~10,4%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>Date   : Sat 03/11/2006
+Weekday: Sat
+Month  : 03
+Day    : 11
+Year   : 2006
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152730></A><A name=Snippets.Remove></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Remove - Remove a substring using string substitution</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>The string substitution feature can also be used 
+      to remove a substring from another string. The example shown here removes 
+      all occurrences of "the " from the string variable <B>str</B>.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str=the&nbsp;cat&nbsp;in&nbsp;the&nbsp;hat</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:the&nbsp;=%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>the cat in the hat
+cat in hat
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152736></A><A name=Snippets.RemoveBothEnds></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Remove both Ends - Remove the first and the last character of a string</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>Using <B>:~1,-1</B> within a variable expansion 
+      will remove the first and last character of the string.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str=politic</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:~1,-1%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>politic
+oliti
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152728></A><A name=Snippets.RemoveSpaces></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Remove Spaces - Remove all spaces in a string via substitution</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>This script snippet can be used to remove all 
+      spaces from a string.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;word&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;<SPAN 
+            class=c_cmmt>rem</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000">echo."%str%"</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:&nbsp;=%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo."%str%"</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>"      word       "
+"word"
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152729></A><A name=Snippets.Replace></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Replace - Replace a substring using string substitution</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>To replace a substring with another string use 
+      the string substitution feature. The example shown here replaces all 
+      occurrences "teh" misspellings with "the" in the string variable 
+      <B>str</B>.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str=teh&nbsp;cat&nbsp;in&nbsp;teh&nbsp;hat</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:teh=the%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>teh cat in teh hat
+the cat in the hat
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152735></A><A name=Snippets.RightString></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Right String - Extract characters from the end of a string</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>Similar to the <B>Right</B> function in VB a 
+      batch script can return a specified number of characters from the right 
+      side of a string by specifying a substring for an expansion given a 
+      negative position using :~ while expanding a variable content. The example 
+      shows how to return the last 4 characters of a string.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str=politic</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:~-4%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>politic
+itic
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152732></A><A name=Snippets.SplitString></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Split String - Split a String, Extract Substrings by Delimiters</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>Use the <B>FOR</B> command to split a string 
+      into parts. The example shows how to split a date variable into its 
+    parts.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR><A 
+            name=5>5.</A><BR><A name=6>6.</A><BR><A name=7>7.</A><BR><A 
+            name=8>8.</A><BR><A name=9>9.</A><BR><A name=10>10.</A><BR><A 
+            name=11>11.</A><BR><A name=12>12.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">echo.--&nbsp;Split&nbsp;off&nbsp;the&nbsp;first&nbsp;date&nbsp;token,&nbsp;i.e.&nbsp;day&nbsp;of&nbsp;the&nbsp;week</SPAN><BR><SPAN 
+            style="COLOR: #000000">for&nbsp;/f&nbsp;<SPAN 
+            class=c_pvar>%%a</SPAN>&nbsp;in&nbsp;("%date%")&nbsp;do&nbsp;set&nbsp;d=<SPAN 
+            class=c_pvar>%%a</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Date&nbsp;&nbsp;&nbsp;:&nbsp;%date%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;%d%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.</SPAN><BR><SPAN 
+            style="COLOR: #000000"></SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.--&nbsp;Split&nbsp;the&nbsp;date&nbsp;into&nbsp;weekday,&nbsp;month,&nbsp;day,&nbsp;and&nbsp;year,&nbsp;using&nbsp;slash&nbsp;and&nbsp;space&nbsp;as&nbsp;delimiters</SPAN><BR><SPAN 
+            style="COLOR: #000000">for&nbsp;/f&nbsp;"tokens=1,2,3,4&nbsp;delims=/&nbsp;"&nbsp;<SPAN 
+            class=c_pvar>%%a</SPAN>&nbsp;in&nbsp;("%date%")&nbsp;do&nbsp;set&nbsp;wday=<SPAN 
+            class=c_pvar>%%a</SPAN>&amp;set&nbsp;month=<SPAN 
+            class=c_pvar>%%b</SPAN>&amp;set&nbsp;day=<SPAN 
+            class=c_pvar>%%c</SPAN>&amp;set&nbsp;year=<SPAN 
+            class=c_pvar>%%d</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Weekday:&nbsp;%wday%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Month&nbsp;&nbsp;:&nbsp;%month%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Day&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;%day%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.Year&nbsp;&nbsp;&nbsp;:&nbsp;%year%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>-- Split off the first date token, i.e. day of the week
+Date   : Thu 12/02/2005
+d      : Thu
+
+-- Split the date into weekday, month, day, and year, using slash and space as delimiters
+Weekday: Thu
+Month  : 12
+Day    : 02
+Year   : 2005
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=""></A><A name=Snippets.StringConcatenation></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-02-26</FONT></FONT></DIV>
+<H2>String Concatenation - Add one string to another string</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>This example shows how to add two strings in 
+    DOS.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR><A 
+            name=5>5.</A><BR><A name=6>6.</A><BR><A name=7>7.</A><BR><A 
+            name=8>8.</A><BR><A name=9>9.</A><BR><A 
+name=10>10.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;"str1=Hello"</SPAN><BR><SPAN 
+            style="COLOR: #000000">&nbsp;&nbsp;set&nbsp;"str2=World"</SPAN><BR><SPAN 
+            style="COLOR: #000000"></SPAN><BR><SPAN 
+            style="COLOR: #000000">&nbsp;&nbsp;set&nbsp;"str3=%str1<SPAN 
+            class=c_pvar>%%s</SPAN>tr2%"</SPAN><BR><SPAN 
+            style="COLOR: #000000">&nbsp;&nbsp;set&nbsp;"str4=%str1%&nbsp;%str2%"</SPAN><BR><SPAN 
+            style="COLOR: #000000">&nbsp;&nbsp;set&nbsp;"str1=%str1%&nbsp;DOS&nbsp;%str2%"</SPAN><BR><SPAN 
+            style="COLOR: #000000"></SPAN><BR><SPAN 
+            style="COLOR: #000000">&nbsp;&nbsp;echo.%str3%</SPAN><BR><SPAN 
+            style="COLOR: #000000">&nbsp;&nbsp;echo.%str4%</SPAN><BR><SPAN 
+            style="COLOR: #000000">&nbsp;&nbsp;echo.%str1%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>HelloWorld
+  Hello World
+  Hello DOS World
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152726></A><A name=Snippets.TrimLeftFOR></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-04-28</FONT></FONT></DIV>
+<H2>Trim Left - Trim spaces from the beginning of a string via "FOR" 
+command</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>Use the <B>FOR</B> command to trim spaces at the 
+      beginning of a variable. In this example the variable to be trimmed is 
+      <B>str</B>.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;Leading&nbsp;spaces&nbsp;to&nbsp;truncate</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo."%str%"</SPAN><BR><SPAN 
+            style="COLOR: #000000">for&nbsp;/f&nbsp;"tokens=*&nbsp;delims=&nbsp;"&nbsp;<SPAN 
+            class=c_pvar>%%a</SPAN>&nbsp;in&nbsp;("%str%")&nbsp;do&nbsp;set&nbsp;str=<SPAN 
+            class=c_pvar>%%a</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000">echo."%str%"</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>"               15 Leading spaces to truncate"
+"15 Leading spaces to truncate"
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152737></A><A name=Snippets.TrimQuotes></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Trim Quotes - Remove surrounding quotes via FOR command</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>The <B>FOR</B> command can be used to safely 
+      remove quotes surrounding a string. If the string does not have quotes 
+      then it will remain unchanged.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str="cmd&nbsp;politic"</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR><SPAN 
+            style="COLOR: #000000">for&nbsp;/f&nbsp;"useback&nbsp;tokens=*"&nbsp;<SPAN 
+            class=c_pvar>%%a</SPAN>&nbsp;in&nbsp;('%str%')&nbsp;do&nbsp;set&nbsp;str=<SPAN 
+            class=c_pvar>%%~a</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000">echo.%str%</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>"cmd politic"
+cmd politic
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152727></A><A name=Snippets.TrimRightFOR></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Trim Right - Trim spaces from the end of a string via "FOR" command</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>Trimming spaces at the end of a variable seems a 
+      little tricky. The following example shows how to use a <B>FOR</B> loop to 
+      trim <B>up to 31</B> spaces from the end of a string. It assumes that <A 
+      href="http://www.dostips.com/DosCommandIndex.htm#SETLOCAL">Delayed 
+      Expansion</A> is enabled.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str=15&nbsp;Trailing&nbsp;Spaces&nbsp;to&nbsp;truncate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;<SPAN 
+            class=c_cmmt>rem</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000">echo."%str%"</SPAN><BR><SPAN 
+            style="COLOR: #000000">for&nbsp;/l&nbsp;<SPAN 
+            class=c_pvar>%%a</SPAN>&nbsp;in&nbsp;(1,1,31)&nbsp;do&nbsp;if&nbsp;"!str:~-1!"=="&nbsp;"&nbsp;set&nbsp;str=!str:~0,-1!</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo."%str%"</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>"15 Trailing Spaces to truncate               "
+"15 Trailing Spaces to truncate"
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<HR>
+<A name=_Toc135152727></A><A name=Snippets.TrimRightSubst></A>
+<DIV style="FLOAT: right"><FONT color=darkblue><A 
+href="http://www.dostips.com/DtTipsStringManipulation.php#">TOP</A><BR><FONT 
+size=1>2008-01-01</FONT></FONT></DIV>
+<H2>Trim Right - Trim spaces from the end of a string via substitution</H2>
+<TABLE class=posts>
+  <TBODY>
+  <TR>
+    <TD class=title vAlign=top>Description:</TD>
+    <TD class=text vAlign=top>Trimming spaces at the end of a variable seems a 
+      little tricky. The following example shows how to use the string 
+      substitution feature to trim <B>up to 31 spaces</B> from the end of a 
+      string. It assumes that the string to be trimmed never contains two hash 
+      "##" characters in a row.</TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=btchscr>
+        <TBODY>
+        <TR>
+          <TD class=numbrs noWrap align=right><CODE><A name=1>1.</A><BR><A 
+            name=2>2.</A><BR><A name=3>3.</A><BR><A name=4>4.</A><BR><A 
+            name=5>5.</A><BR><A name=6>6.</A><BR><A name=7>7.</A><BR><A 
+            name=8>8.</A><BR><A name=9>9.</A><BR><A 
+name=10>10.</A><BR></CODE></TD>
+          <TD class=code noWrap><CODE><SPAN 
+            style="COLOR: #000000">set&nbsp;str=15&nbsp;Trailing&nbsp;Spaces&nbsp;to&nbsp;truncate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;<SPAN 
+            class=c_cmmt>rem</SPAN></SPAN><BR><SPAN 
+            style="COLOR: #000000">echo."%str%"</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str%##</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##=##%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##=##%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:&nbsp;&nbsp;&nbsp;&nbsp;##=##%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:&nbsp;&nbsp;##=##%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:&nbsp;##=##%</SPAN><BR><SPAN 
+            style="COLOR: #000000">set&nbsp;str=%str:##=%</SPAN><BR><SPAN 
+            style="COLOR: #000000">echo."%str%"</SPAN><BR></CODE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=title vAlign=top>Script Output:</TD>
+    <TD class=text vAlign=top>
+      <TABLE class=dosw cellSpacing=2 cellPadding=3 border=0>
+        <TBODY>
+        <TR>
+          <TD class=title>&nbsp;<IMG alt=DOS 
+            src="DOS - String Manipulation_files/SysIcon.jpg">&nbsp;Script Ouput 
+          </TD></TR>
+        <TR>
+          <TD class=text><PRE>"15 Trailing Spaces to truncate               "
+"15 Trailing Spaces to truncate"
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR><BR><A 
+href="http://www.amazon.com/gp/product/0735622620?ie=UTF8&amp;tag=dos01-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0735622620"><IMG 
+src="DOS - String Manipulation_files/51JXrVTAGnL._SL160_.jpg" border=0></A><IMG 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; MARGIN: 0px; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+height=1 alt="" src="DOS - String Manipulation_files/ir.gif" width=1 border=0> 
+<A 
+href="http://www.amazon.com/gp/product/0735625956/ref=as_li_tf_il?ie=UTF8&amp;tag=dos01-20&amp;linkCode=as2&amp;camp=217145&amp;creative=399353&amp;creativeASIN=0735625956"><IMG 
+src="DOS - String Manipulation_files/51vKB-a5V-L._SL110_.jpg" border=0></A><IMG 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; MARGIN: 0px; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none" 
+height=1 alt="" 
+src="H:\Code snipits\Bat scripting\DOS - String Manipulation_files\ir(1).gif" 
+width=1 border=0>
+<SCRIPT type=text/javascript><!--
+google_ad_client = "pub-4331089886589220";
+/* 468x60, created 12/30/07 */
+google_ad_slot = "8403807900";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</SCRIPT>
+
+<SCRIPT src="DOS - String Manipulation_files/show_ads.js" type=text/javascript>
+</SCRIPT>
+ 
+<DIV class=bot>
+<SCRIPT type=text/javascript>
+    /***********************************************
+    * IFrame SSI script II- Copyright Dynamic Drive DHTML code library (http://www.dynamicdrive.com)
+    * Visit DynamicDrive.com for hundreds of original DHTML scripts
+    * This notice must stay intact for legal use
+    ***********************************************/
+    
+    //Input the IDs of the IFRAMES you wish to dynamically resize to match its content height:
+    //Separate each ID with a comma. Examples: ["myframe1", "myframe2"] or ["myframe"] or [] for none:
+    var iframeids=["myframe"]
+    
+    //Should script hide iframe from browsers that don't support this script (non IE5+/NS6+ browsers. Recommended):
+    var iframehide="yes"
+    
+    var getFFVersion=navigator.userAgent.substring(navigator.userAgent.indexOf("Firefox")).split("/")[1]
+    var FFextraHeight=parseFloat(getFFVersion)>=0.1? 16 : 0 //extra height in px to add to iframe in FireFox 1.0+ browsers
+    
+    function resizeCaller() {
+        var dyniframe=new Array()
+        for (i=0; i<iframeids.length; i++){
+            if (document.getElementById)
+                resizeIframe(iframeids[i])
+            //reveal iframe for lower end browsers? (see var above):
+            if ((document.all || document.getElementById) && iframehide=="no"){
+                var tempobj=document.all? document.all[iframeids[i]] : document.getElementById(iframeids[i])
+                tempobj.style.display="block"
+            }
+        }
+    }
+    
+    function resizeIframe(frameid){
+        var currentfr=document.getElementById(frameid)
+        if (currentfr && !window.opera){
+            currentfr.style.display="block"
+            if (currentfr.contentDocument && currentfr.contentDocument.body.offsetHeight) //ns6 syntax
+                currentfr.height = currentfr.contentDocument.body.offsetHeight+FFextraHeight; 
+            else if (currentfr.Document && currentfr.Document.body.scrollHeight) //ie5+ syntax
+                currentfr.height = currentfr.Document.body.scrollHeight;
+            if (currentfr.addEventListener)
+                currentfr.addEventListener("load", readjustIframe, false)
+            else if (currentfr.attachEvent){
+                currentfr.detachEvent("onload", readjustIframe) // Bug fix line
+                currentfr.attachEvent("onload", readjustIframe)
+            }
+        }
+    }
+    
+    function readjustIframe(loadevt) {
+        var crossevt=(window.event)? event : loadevt
+        var iframeroot=(crossevt.currentTarget)? crossevt.currentTarget : crossevt.srcElement
+        if (iframeroot)
+            resizeIframe(iframeroot.id);
+    }
+    
+    function loadintoIframe(iframeid, url){
+        if (document.getElementById)
+        document.getElementById(iframeid).src=url
+    }
+    
+    if (window.addEventListener)
+        window.addEventListener("load", resizeCaller, false)
+    else if (window.attachEvent)
+        window.attachEvent("onload", resizeCaller)
+    else
+        window.onload=resizeCaller
+</SCRIPT>
+
+<CENTER><BR><BR>
+<SCRIPT type=text/javascript>
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var pageTracker = _gat._getTracker("UA-280191-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();    </SCRIPT>
+<BR></CENTER><IFRAME id=myframe style="OVERFLOW: visible" marginWidth=0 
+marginHeight=0 src="DOS - String Manipulation_files/sh43.htm" frameBorder=0 
+width="100%" height=15000></IFRAME></DIV></BODY></HTML>
